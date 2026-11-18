@@ -6,9 +6,14 @@ const musicBtn = $("music-btn");
 
 // Optional guest personalization via ?guest= or ?to=
 const params = new URLSearchParams(location.search);
-const guest = (params.get("guest") || params.get("to") || "").trim();
-if (guest) {
-  $("guest-name").textContent = guest.toUpperCase();
+const rawGuest = (params.get("guest") || params.get("to") || "").replace(/_/g, " ").trim();
+if (rawGuest) {
+  const upper = rawGuest.toUpperCase();
+  $("guest-name").textContent = upper;
+  if ($("ticket-guest") && $("ticket-invite")) {
+    $("ticket-guest").textContent = upper;
+    $("ticket-invite").hidden = false;
+  }
 }
 
 // Returns "" once the time has passed.

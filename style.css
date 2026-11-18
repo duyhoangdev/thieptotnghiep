@@ -298,6 +298,17 @@ body {
     radial-gradient(circle at 100% 50%, var(--navy) 12px, transparent 13px);
 }
 
+.ticket-invite {
+  margin-top: 14px;
+  padding: 8px 12px;
+  border-radius: 10px;
+  background: var(--navy);
+  color: var(--gold);
+  font-size: 14px;
+  font-weight: 600;
+}
+.ticket-invite b { color: #fff; font-weight: 800; }
+
 .thanks {
   font-size: 15.5px; line-height: 1.6; font-style: italic;
   border-left: 4px solid var(--gold);
@@ -625,7 +636,8 @@ body {
   .schedule-note { font-size: 15px; padding: 13px 16px; margin-top: 16px; }
   .countdown { margin-top: 16px; padding: 16px; }
   .cd-val { font-size: 26px; }
-  .thanks { font-size: 17px; padding-left: 16px; margin-top: 18px; }
+  .ticket-invite { font-size: 15px; padding: 10px 14px; margin-top: 16px; }
+  .thanks { font-size: 17px; padding-left: 16px; margin-top: 16px; }
 
   .map-tab { font-size: 14px; padding: 8px 14px; }
   .map-zoom-btn { font-size: 13px; padding: 7px 12px; right: 12px; top: 12px; }

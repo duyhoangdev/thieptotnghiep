@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tạo link mời tốt nghiệp · Mai Văn Hoàng Duy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    :root { --navy:#0b1d3a; --paper:#f7f0e1; --ink:#111827; --muted:#4b5563; --red:#d7263d; --gold:#e8b04a; }
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at 20% 10%, #1f3b6e 0, transparent 40%), var(--navy);
+      color: var(--ink);
+      font-family: "Be Vietnam Pro", system-ui, sans-serif;
+      padding: 24px 16px 48px;
+      display: flex;
+      justify-content: center;
+    }
+    .card {
+      width: 100%; max-width: 720px;
+      background: var(--paper);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(0,0,0,.45);
+      align-self: flex-start;
+    }
+    .head {
+      background: var(--red); color: #fff;
+      padding: 16px 22px; font-weight: 800; font-size: 16px;
+      display: flex; justify-content: space-between; align-items: center; gap: 10px;
+    }
+    .body { padding: 22px; display: flex; flex-direction: column; gap: 16px; }
+    .hint { font-size: 14px; color: var(--muted); line-height: 1.5; }
+    textarea {
+      width: 100%; min-height: 120px;
+      padding: 12px 14px; border-radius: 12px;
+      border: 1.5px solid #d5c9b0; background: #fff;
+      font: 500 15px/1.5 "Be Vietnam Pro", sans-serif; color: var(--ink);
+      resize: vertical;
+    }
+    textarea:focus { outline: 2px solid var(--navy); border-color: var(--navy); }
+    .row-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .btn {
+      border: none; border-radius: 10px; padding: 11px 16px;
+      background: var(--navy); color: var(--paper);
+      font: 700 14px "Be Vietnam Pro", sans-serif; cursor: pointer;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
+    }
+    .btn:hover { background: var(--red); }
+    .btn-gold { background: var(--gold); color: var(--navy); }
+    .btn-gold:hover { background: #f3c162; color: var(--navy); }
+    .list { display: flex; flex-direction: column; gap: 10px; }
+    .item {
+      background: #fff; border: 1px solid #dfd3b9; border-radius: 12px;
+      padding: 12px 14px; display: flex; flex-direction: column; gap: 8px;
+    }
+    .item-top { display: flex; justify-content: space-between; align-items: center; gap: 10px; flex-wrap: wrap; }
+    .item-name { font-weight: 800; color: var(--navy); font-size: 15px; }
+    .item-btns { display: flex; gap: 8px; }
+    .mini {
+      border: none; border-radius: 8px; padding: 7px 11px;
+      font: 700 12.5px "Be Vietnam Pro", sans-serif; cursor: pointer;
+      background: #e9e0cc; color: var(--navy); text-decoration: none;
+    }
+    .mini.primary { background: #047857; color: #fff; }
+    .url {
+      font: 500 12.5px/1.45 "JetBrains Mono", monospace;
+      color: var(--muted); word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <header class="head">
+      <span>✈ TẠO LINK MỜI THEO TÊN KHÁCH</span>
+      <a href="./" class="mini">← Xem thiệp</a>
+    </header>
+    <div class="body">
+      <p class="hint">
+        Nhập tên từng người (<b>mỗi dòng 1 tên</b>) để tạo link riêng có mã hóa sẵn dấu tiếng Việt và khoảng trắng, gửi qua Zalo / Messenger không bị gãy link.
+      </p>
+      <textarea id="names" placeholder="Ví dụ:&#10;Trần Nguyễn Mạnh Cường&#10;Nguyễn Minh Anh&#10;Gia đình bác Ba">Trần Nguyễn Mạnh Cường</textarea>
+      <div class="row-actions">
+        <button id="copy-all" type="button" class="btn btn-gold">📋 Copy toàn bộ danh sách</button>
+      </div>
+      <div id="list" class="list"></div>
+    </div>
+  </main>
+
+  <script>
+    const baseUrl = new URL("./", location.href).href.split("?")[0];
+    const namesEl = document.getElementById("names");
+    const listEl = document.getElementById("list");
+    const copyAllBtn = document.getElementById("copy-all");
+
+    function buildLink(name) {
+      return `${baseUrl}?guest=${encodeURIComponent(name)}`;
+    }
+
+    function render() {
+      const names = namesEl.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean);
+      listEl.innerHTML = "";
+      names.forEach((name) => {
+        const url = buildLink(name);
+        const card = document.createElement("div");
+        card.className = "item";
+        card.innerHTML = `
+          <div class="item-top">
+            <span class="item-name">🎟 ${name.replace(/</g, "&lt;")}</span>
+            <div class="item-btns">
+              <button type="button" class="mini primary">📋 Copy link</button>
+              <a class="mini" target="_blank" rel="noopener">👁 Xem thử</a>
+            </div>
+          </div>
+          <div class="url"></div>
+        `;
+        card.querySelector(".url").textContent = url;
+        card.querySelector("a").href = url;
+        const copyBtn = card.querySelector("button");
+        copyBtn.addEventListener("click", async () => {
+          await navigator.clipboard.writeText(url);
+          copyBtn.textContent = "✓ Đã copy";
+          setTimeout(() => (copyBtn.textContent = "📋 Copy link"), 1500);
+        });
+        listEl.appendChild(card);
+      });
+    }
+
+    copyAllBtn.addEventListener("click", async () => {
+      const lines = namesEl.value
+        .split(/\r?\n/)
+        .map((s) => s.trim())
+        .filter(Boolean)
+        .map((n) => `${n}: ${buildLink(n)}`)
+        .join("\n");
+      if (!lines) return;
+      await navigator.clipboard.writeText(lines);
+      copyAllBtn.textContent = "✓ Đã copy tất cả!";
+      setTimeout(() => (copyAllBtn.textContent = "📋 Copy toàn bộ danh sách"), 1600);
+    });
+
+    namesEl.addEventListener("input", render);
+    render();
+  </script>
+</body>
+</html>
