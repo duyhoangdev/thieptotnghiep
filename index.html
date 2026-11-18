@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Graduation Air · Mai Văn Hoàng Duy</title>
+  <meta name="description" content="Vé lên chuyến bay tốt nghiệp của Mai Văn Hoàng Duy — T7 28.11.2026 · Trước lễ 11:00–14:30 & Sau lễ 16:30–18:00, ĐH Bách khoa – ĐHQG-HCM">
+  <meta property="og:title" content="✈ Bạn có 1 vé lên chuyến bay tốt nghiệp">
+  <meta property="og:description" content="Mai Văn Hoàng Duy · Khoa học Máy tính · T7 28.11.2026 (Trước lễ 11:00–14:30 · Sau lễ 16:30–18:00)">
+  <meta property="og:image" content="assets/duy.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="sky" id="sky" aria-hidden="true">
+    <span class="jet">✈</span>
+  </div>
+
+  <!-- Intro: night airport -->
+  <section id="intro" class="intro">
+    <div class="board">
+      <div class="board-head">
+        <span class="brand-inline"><img src="assets/bk-logo.svg" alt="Logo ĐH Bách khoa" class="bk-badge"> ✈ DEPARTURES</span><span>KHỞI HÀNH</span>
+      </div>
+      <div class="board-row"><span class="b-label">FLIGHT</span><span class="flap" data-text="HCMUT-2026"></span></div>
+      <div class="board-row"><span class="b-label">TO</span><span class="flap" data-text="CỬ NHÂN"></span></div>
+      <div class="board-row"><span class="b-label">TIME</span><span class="flap" data-text="28/11 11:00"></span></div>
+      <div class="board-row"><span class="b-label">STATUS</span><span class="flap status" data-text="BOARDING"></span><i class="dot"></i></div>
+    </div>
+
+    <div class="pass" id="stub">
+      <div class="pass-main">
+        <div class="foil"></div>
+        <p class="label brand-inline"><img src="assets/bk-logo.svg" alt="Logo ĐH Bách khoa" class="bk-badge-sm"> GRADUATION AIR · ĐH BÁCH KHOA</p>
+        <p class="pass-title">Bạn có <b>1 vé</b><br>lên chuyến bay<br>tốt nghiệp</p>
+        <p class="mono pass-guest">PASSENGER ▸ <span id="guest-name">KHÁCH MỜI ĐẶC BIỆT</span></p>
+      </div>
+      <button id="tear" class="pass-tear" type="button">
+        <span class="tear-hint">✂ KÉO XUỐNG HOẶC CHẠM ĐỂ XÉ VÉ</span>
+        <span class="tear-arrow">↓</span>
+      </button>
+    </div>
+
+    <div class="runway" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+  </section>
+
+  <!-- Full boarding pass -->
+  <main id="ticket" class="ticket" hidden>
+    <header class="t-head">
+      <span class="brand brand-inline"><img src="assets/bk-logo.svg" alt="Logo ĐH Bách khoa" class="bk-badge"> ✈ GRADUATION AIR · ĐH BÁCH KHOA</span>
+      <span class="mono">BOARDING PASS</span>
+    </header>
+
+    <div class="t-body">
+      <div class="passenger">
+        <img
+          src="assets/duy.jpg"
+          alt="Ảnh Mai Văn Hoàng Duy"
+          class="photo"
+          onerror="this.onerror=null;this.src='assets/duy-avatar.svg';"
+        >
+        <div>
+          <p class="label">PASSENGER</p>
+          <h1 class="name">MAI VĂN HOÀNG DUY</h1>
+          <p class="mono small">Trường ĐH Bách khoa · ĐHQG-HCM</p>
+          <a class="phone-pill" href="tel:0816624158">📞 Liên hệ: 0816 624 158</a>
+        </div>
+      </div>
+
+      <div class="route">
+        <div><p class="code">STU</p><p class="label">Sinh viên</p></div>
+        <div class="plane"><span class="plane-line">- - -</span> <img src="assets/bk-logo.svg" alt="Logo BK" class="bk-plane"> <span>✈</span> <span class="plane-line">- - -</span></div>
+        <div class="right"><p class="code">BSc</p><p class="label">Cử nhân Khoa học Máy tính</p></div>
+      </div>
+
+      <div class="grid">
+        <div><p class="label">FLIGHT</p><p class="val flight-val"><img src="assets/bk-logo.svg" alt="Logo BK" class="bk-inline"> HCMUT-2026</p></div>
+        <div><p class="label">DATE</p><p class="val">T7 · 28.11.2026</p></div>
+        <div><p class="label">CLASS</p><p class="val">KHMT · Đại trà</p></div>
+        <div><p class="label">GIỜ LÀM LỄ</p><p class="val">14:30 – 17:30</p></div>
+        <div><p class="label">TRƯỚC LỄ (CHỤP ẢNH)</p><p class="val">11:00 – 14:30</p></div>
+        <div><p class="label">SAU LỄ (CHỤP ẢNH)</p><p class="val">16:30 – 18:00</p></div>
+        <div class="wide"><p class="label">ĐIỂM HẸN CHỤP ẢNH</p><p class="val">Góc bên phải biên sân banh (hướng từ Lý Thường Kiệt · nhiều cây mát)</p></div>
+        <div class="wide"><p class="label">NƠI LÀM LỄ</p><p class="val">Hội trường A5 · Trường ĐH Bách khoa (268 Lý Thường Kiệt)</p></div>
+      </div>
+
+      <p class="schedule-note">
+        * Mình làm lễ trong <b>Hội trường A5</b> (14:30–17:30), nhưng hẹn đón &amp; chụp ảnh cùng mọi người tại <b>góc bên phải biên sân banh</b> (hướng từ Lý Thường Kiệt vào) cho mát và có chỗ ngồi nhé! Khung giờ chụp ảnh: <b>11:00–14:30</b> (trước lễ) &amp; <b>16:30–18:00</b> (sau khi nhận bằng).
+      </p>
+
+      <div class="countdown" id="countdown" aria-live="polite">
+        <p class="label">ĐÓN KHÁCH SAU</p>
+        <p class="cd-val" id="cd-val">--</p>
+      </div>
+
+      <blockquote class="thanks">
+        Chuyến bay này cất cánh nhờ có gia đình, thầy cô và bạn bè.
+        Cảm ơn mọi người đã đồng hành cùng mình suốt những năm tháng tại Bách khoa.
+        Hẹn gặp mọi người tại góc sân banh mát rượi trước giờ bay nhé! 🎓📸
+      </blockquote>
+    </div>
+
+    <div class="perf" aria-hidden="true"></div>
+
+    <div class="t-stub">
+      <div class="map-head">
+        <p class="label">BẢN ĐỒ 3D CỔNG LÊN TÀU · ĐH BÁCH KHOA</p>
+        <div class="map-tabs" role="tablist" aria-label="Chế độ xem bản đồ">
+          <button type="button" class="map-tab is-active" data-map-mode="campus" role="tab" aria-selected="true">🏫 Sơ đồ 3D</button>
+          <button type="button" class="map-tab" data-map-mode="google" role="tab" aria-selected="false">🛰 Google Maps</button>
+        </div>
+      </div>
+
+      <div id="map-campus-view" class="map-stage">
+        <div class="map-3d-frame" id="map-3d-frame" data-focus="all">
+          <div class="map-inner">
+            <img
+              src="assets/map.jpg"
+              alt="Bản đồ 3D khuôn viên ĐH Bách khoa với đường Lý Thường Kiệt, đường Tô Hiến Thành, 2 bãi giữ xe và Hội trường A5"
+              class="map-img"
+              loading="lazy"
+            >
+            <svg class="map-overlay" viewBox="0 0 1080 514" aria-hidden="true">
+            <defs>
+              <filter id="pinShadow" x="-30%" y="-30%" width="160%" height="160%">
+                <feDropShadow dx="0" dy="3" stdDeviation="3" flood-color="#0b1d3a" flood-opacity="0.45"/>
+              </filter>
+            </defs>
+
+            <!-- Trục đường chính -->
+            <g class="street-tag">
+              <g transform="translate(122, 224) rotate(-57)">
+                <rect x="-118" y="-18" width="236" height="32" rx="16" fill="#0b1d3a" opacity="0.93" stroke="#e8b04a" stroke-width="2"/>
+                <text x="0" y="5" text-anchor="middle" fill="#e8b04a" font-size="16" font-weight="800" font-family="sans-serif">ĐƯỜNG LÝ THƯỜNG KIỆT</text>
+              </g>
+              <g transform="translate(415, 418) rotate(-7.5)">
+                <rect x="-126" y="-18" width="252" height="32" rx="16" fill="#0b1d3a" opacity="0.93" stroke="#e8b04a" stroke-width="2"/>
+                <text x="0" y="5" text-anchor="middle" fill="#e8b04a" font-size="16.5" font-weight="800" font-family="sans-serif">ĐƯỜNG TÔ HIẾN THÀNH</text>
+              </g>
+            </g>
+
+            <!-- Lối đi từ Cổng 1 & Bãi xe góc Lý Thường Kiệt -> Điểm hẹn sân banh & A5 -->
+            <g class="route-group route-ltk">
+              <path d="M 190 240 L 225 198 L 265 222 L 420 220 L 478 208" class="route-line route-blue"/>
+              <path d="M 265 222 L 315 240 L 315 294 L 396 294" class="route-line route-blue"/>
+            </g>
+
+            <!-- Lối đi từ Cổng 3 -> đi thẳng giữa khu B và C -> Bãi xe 2 (sau B10) -> A5 & Điểm hẹn sân banh -->
+            <g class="route-group route-tht">
+              <path d="M 960 300 L 875 215 L 830 196 L 795 196 L 560 192 L 520 212 L 478 208" class="route-line route-emerald"/>
+              <path d="M 520 212 L 435 235 L 435 294 L 396 294" class="route-line route-emerald"/>
+            </g>
+
+            <!-- Cổng 1 Lý Thường Kiệt -->
+            <g class="pin route-ltk" transform="translate(190, 240)" filter="url(#pinShadow)">
+              <circle r="16" fill="#2563eb" stroke="#fff" stroke-width="3"/>
+              <text y="6" text-anchor="middle" fill="#fff" font-size="17" font-weight="900" font-family="sans-serif">1</text>
+              <rect x="-46" y="21" width="92" height="28" rx="9" fill="#2563eb" stroke="#fff" stroke-width="2"/>
+              <text y="40" text-anchor="middle" fill="#fff" font-size="16" font-weight="800" font-family="sans-serif">Cổng 1</text>
+            </g>
+
+            <!-- Bãi giữ xe 1: Nằm ngay góc phía Lý Thường Kiệt -->
+            <g class="pin route-ltk" transform="translate(225, 198)" filter="url(#pinShadow)">
+              <rect x="-17" y="-17" width="34" height="34" rx="9" fill="#1d4ed8" stroke="#fff" stroke-width="3"/>
+              <text y="7" text-anchor="middle" fill="#fff" font-size="21" font-weight="900" font-family="sans-serif">P</text>
+              <rect x="-54" y="-50" width="108" height="28" rx="9" fill="#0b1d3a" stroke="#93c5fd" stroke-width="2"/>
+              <text y="-31" text-anchor="middle" fill="#93c5fd" font-size="16" font-weight="800" font-family="sans-serif">Bãi xe 1</text>
+            </g>
+
+            <!-- Cổng 2 Tô Hiến Thành: Khu vực xe giảng viên -->
+            <g class="pin pin-warn route-tht" transform="translate(566, 352)" filter="url(#pinShadow)">
+              <circle r="15" fill="#64748b" stroke="#fff" stroke-width="3"/>
+              <text y="5" text-anchor="middle" fill="#fff" font-size="16" font-weight="900" font-family="sans-serif">2</text>
+              <rect x="-64" y="20" width="128" height="28" rx="9" fill="#475569" stroke="#fbbf24" stroke-width="2"/>
+              <text y="39" text-anchor="middle" fill="#fef3c7" font-size="15" font-weight="800" font-family="sans-serif">Cổng 2 (GV)</text>
+            </g>
+
+            <!-- Cổng 3 Tô Hiến Thành (Cổng vào gửi xe khách) -->
+            <g class="pin route-tht" transform="translate(960, 300)" filter="url(#pinShadow)">
+              <circle r="16" fill="#059669" stroke="#fff" stroke-width="3"/>
+              <text y="6" text-anchor="middle" fill="#fff" font-size="17" font-weight="900" font-family="sans-serif">3</text>
+              <rect x="-92" y="21" width="106" height="28" rx="9" fill="#059669" stroke="#fff" stroke-width="2"/>
+              <text x="-39" y="40" text-anchor="middle" fill="#fff" font-size="16" font-weight="800" font-family="sans-serif">Cổng 3</text>
+            </g>
+
+            <!-- Bãi giữ xe 2: Nằm sau tòa B10 -->
+            <g class="pin route-tht" transform="translate(795, 196)" filter="url(#pinShadow)">
+              <rect x="-17" y="-17" width="34" height="34" rx="9" fill="#047857" stroke="#fff" stroke-width="3"/>
+              <text y="7" text-anchor="middle" fill="#fff" font-size="21" font-weight="900" font-family="sans-serif">P</text>
+              <rect x="-92" y="-50" width="184" height="28" rx="9" fill="#0b1d3a" stroke="#6ee7b7" stroke-width="2"/>
+              <text y="-31" text-anchor="middle" fill="#6ee7b7" font-size="15.5" font-weight="800" font-family="sans-serif">Bãi xe 2 (Sau B10)</text>
+            </g>
+
+            <!-- Điểm hẹn chụp ảnh: Nửa góc bên phải biên sân banh -->
+            <g class="pin pin-meet" transform="translate(396, 294)" filter="url(#pinShadow)">
+              <circle r="26" class="pulse-ring pulse-ring-gold"/>
+              <path d="M0,-30 C-11,-30 -20,-20 -20,-8 C-20,6 0,23 0,23 C0,23 20,6 20,-8 C20,-20 11,-30 0,-30 Z" fill="#f59e0b" stroke="#fff" stroke-width="3.5"/>
+              <circle cy="-9" r="7" fill="#0b1d3a"/>
+              <rect x="-68" y="-64" width="136" height="29" rx="9" fill="#0b1d3a" stroke="#fbbf24" stroke-width="2"/>
+              <text y="-44" text-anchor="middle" fill="#fde68a" font-size="16" font-weight="900" font-family="sans-serif">📸 Điểm hẹn</text>
+            </g>
+
+            <!-- Hội trường A5 (Nơi làm lễ) -->
+            <g class="pin pin-a5" transform="translate(478, 208)" filter="url(#pinShadow)">
+              <circle r="26" class="pulse-ring"/>
+              <path d="M0,-32 C-12,-32 -21,-21 -21,-9 C-21,6 0,24 0,24 C0,24 21,6 21,-9 C21,-21 12,-32 0,-32 Z" fill="#d7263d" stroke="#fff" stroke-width="3.5"/>
+              <circle cy="-10" r="7.5" fill="#f7f0e1"/>
+              <rect x="-60" y="-65" width="120" height="29" rx="9" fill="#d7263d" stroke="#fff" stroke-width="2"/>
+              <text y="-45" text-anchor="middle" fill="#fff" font-size="16.5" font-weight="900" font-family="sans-serif">🎓 HT A5</text>
+            </g>
+          </svg>
+          </div>
+          <button type="button" id="map-zoom-btn" class="map-zoom-btn" aria-label="Phóng to bản đồ">🔍 Phóng to</button>
+        </div>
+
+        <div class="map-filters" role="group" aria-label="Chọn hướng đi và bãi giữ xe">
+          <button type="button" class="filter-chip is-active" data-focus="all">Cả 2 cổng gửi xe</button>
+          <button type="button" class="filter-chip chip-ltk" data-focus="ltk">🅿 Cổng 1 · Lý Thường Kiệt</button>
+          <button type="button" class="filter-chip chip-tht" data-focus="tht">🅿 Cổng 3 · Tô Hiến Thành</button>
+        </div>
+
+        <div class="map-legend" id="map-legend">
+          <p><b>📸 Điểm hẹn (Góc biên phải sân banh):</b> Đi từ <b>Cổng 1 Lý Thường Kiệt</b> vào, hẹn mọi người ở nửa góc bên phải biên sân banh — có cây xanh mát, chỗ ngồi nghỉ &amp; đứng chụp ảnh cực ổn.</p>
+          <p><b>🅿 Bãi xe 1 (Cổng 1 · LTK):</b> Vào <b>Cổng 1 (268 Lý Thường Kiệt)</b>, đi thẳng tới bãi giữ xe ngay góc khuôn viên phía Lý Thường Kiệt, rồi đi bộ qua sân banh (~2 phút).</p>
+          <p><b>🅿 Bãi xe 2 (Sau B10 · Cổng 3):</b> Vào <b>Cổng 3 đường Tô Hiến Thành</b>, đi thẳng vào lối giữa dãy <b>nhà B và nhà C</b> (ngay phía sau tòa <b>B10</b>) sẽ thấy bãi xe, rồi đi bộ hướng về A5 – sân banh (~3 phút).</p>
+          <p><b>🎓 HT A5 (Hội trường A5 · Nơi làm lễ):</b> Khu vực làm lễ trao bằng (14:30–17:30), cách điểm hẹn sân banh ~1 phút đi bộ.</p>
+          <p class="legend-note"><b>⚠️ Cổng 2 (GV):</b> Cổng 2 đường Tô Hiến Thành là khu đậu xe của <b>giảng viên</b>; khách mời gửi xe ở <b>2 cổng</b> là <b>Cổng 1 (Lý Thường Kiệt)</b> hoặc <b>Cổng 3 (Tô Hiến Thành)</b> nhé!</p>
+        </div>
+      </div>
+
+      <div id="map-google-view" class="map-google" hidden>
+        <iframe
+          title="Google Maps Hội trường A5 - ĐH Bách khoa"
+          src="https://maps.google.com/maps?q=H%E1%BB%99i+tr%C6%B0%E1%BB%9Dng+A5,+Tr%C6%B0%E1%BB%9Dng+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+B%C3%A1ch+khoa+-+%C4%90HQG-HCM,+268+L%C3%BD+Th%C6%B0%E1%BB%9Dng+Ki%E1%BB%87t&t=h&z=17&ie=UTF8&iwloc=&output=embed"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          allowfullscreen>
+        </iframe>
+        <p class="mono small map-g-hint">Chạm &amp; kéo để xoay/phóng to bản đồ vệ tinh Google Maps xung quanh trục Lý Thường Kiệt – Tô Hiến Thành.</p>
+      </div>
+
+      <div class="actions">
+        <a class="btn btn-call" href="tel:0816624158">📞 Gọi: 0816 624 158</a>
+        <a class="btn" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/search/?api=1&query=H%E1%BB%99i+tr%C6%B0%E1%BB%9Dng+A5+%C4%90%E1%BA%A1i+h%E1%BB%8Dc+B%C3%A1ch+khoa+268+L%C3%BD+Th%C6%B0%E1%BB%9Dng+Ki%E1%BB%87t">📍 Google Maps</a>
+        <a class="btn" target="_blank" rel="noopener"
+           href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=L%E1%BB%85+t%E1%BB%91t+nghi%E1%BB%87p+Mai+V%C4%83n+Ho%C3%A0ng+Duy&dates=20261128T040000Z/20261128T110000Z&location=Tr%C6%B0%E1%BB%9Dng+%C4%90H+B%C3%A1ch+khoa+-+%C4%90HQG-HCM%2C+268+L%C3%BD+Th%C6%B0%E1%BB%9Dng+Ki%E1%BB%87t%2C+TP.HCM&details=%C4%90i%E1%BB%83m+h%E1%BA%B9n+ch%E1%BB%A5p+%E1%BA%A3nh%3A+G%C3%B3c+b%C3%AAn+ph%E1%BA%A3i+bi%C3%AAn+s%C3%A2n+banh+(h%C6%B0%E1%BB%9Bng+t%E1%BB%AB+L%C3%BD+Th%C6%B0%E1%BB%9Dng+Ki%E1%BB%87t%2C+nhi%E1%BB%81u+c%C3%A2y+m%C3%A1t).+N%C6%A1i+l%C3%A0m+l%E1%BB%85%3A+H%E1%BB%99i+tr%C6%B0%E1%BB%9Dng+A5+(14%3A30+-+17%3A30).+%C4%90%C3%B3n+kh%C3%A1ch%3A+Tr%C6%B0%E1%BB%9Bc+l%E1%BB%85+11%3A00+-+14%3A30+%7C+Sau+l%E1%BB%85+16%3A30+-+18%3A00">📅 Thêm vào lịch</a>
+      </div>
+
+      <div class="barcode"></div>
+      <p class="mono small center">MAI VAN HOANG DUY · HCMUT-2026 · 28NOV</p>
+    </div>
+  </main>
+
+  <button id="music-btn" class="music-btn" type="button" hidden aria-label="Bật/tắt nhạc">🔇</button>
+  <audio id="music" src="assets/music.mp3" loop preload="none"></audio>
+
+  <script src="app.js"></script>
+</body>
+</html>
