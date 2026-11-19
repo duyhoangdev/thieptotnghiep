@@ -91,20 +91,24 @@
   </main>
 
   <script>
-    const baseUrl = new URL("./", location.href).href.split("?")[0];
+    const PUBLIC_URL = "https://duyhoangdev.github.io/thieptotnghiep/";
+    const localUrl = new URL("./", location.href).href.split("?")[0];
+    const isLocal = /^(localhost|127\.0\.0\.1|192\.168\.|10\.|172\.(1[6-9]|2\d|3[01])\.)/.test(location.hostname);
+    const shareBase = isLocal ? PUBLIC_URL : localUrl;
     const namesEl = document.getElementById("names");
     const listEl = document.getElementById("list");
     const copyAllBtn = document.getElementById("copy-all");
 
-    function buildLink(name) {
-      return `${baseUrl}?guest=${encodeURIComponent(name)}`;
+    function buildLink(name, base = shareBase) {
+      return `${base}?guest=${encodeURIComponent(name)}`;
     }
 
     function render() {
       const names = namesEl.value.split(/\r?\n/).map((s) => s.trim()).filter(Boolean);
       listEl.innerHTML = "";
       names.forEach((name) => {
-        const url = buildLink(name);
+        const url = buildLink(name, shareBase);
+        const previewUrl = buildLink(name, localUrl);
         const card = document.createElement("div");
         card.className = "item";
         card.innerHTML = `
@@ -118,7 +122,7 @@
           <div class="url"></div>
         `;
         card.querySelector(".url").textContent = url;
-        card.querySelector("a").href = url;
+        card.querySelector("a").href = previewUrl;
         const copyBtn = card.querySelector("button");
         copyBtn.addEventListener("click", async () => {
           await navigator.clipboard.writeText(url);
